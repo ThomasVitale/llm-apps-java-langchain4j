@@ -1,0 +1,9 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: ${OPENAI_API_KEY}
