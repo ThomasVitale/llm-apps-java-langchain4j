@@ -1,0 +1,10 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+
+langchain4j:
+  open-ai:
+    embedding-model:
+      api-key: ${OPENAI_API_KEY}
+      model-name: text-embedding-ada-002
