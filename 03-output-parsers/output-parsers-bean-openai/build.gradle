@@ -18,7 +18,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    implementation "dev.langchain4j:langchain4j-open-ai-spring-boot-starter:${langchain4jVersion}"
+    implementation "io.thomasvitale.langchain4j:langchain4j-openai-spring-boot-starter:${springLangchain4jVersion}"
     implementation "dev.langchain4j:langchain4j:${langchain4jVersion}"
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'

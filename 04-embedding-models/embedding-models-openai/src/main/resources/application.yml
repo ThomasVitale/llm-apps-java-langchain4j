@@ -5,6 +5,6 @@ spring:
 
 langchain4j:
   open-ai:
-    embedding-model:
-      api-key: ${OPENAI_API_KEY}
-      model-name: text-embedding-ada-002
+    api-key: ${OPENAI_API_KEY}
+    embedding:
+      model: text-embedding-ada-002
