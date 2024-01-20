@@ -1,5 +1,6 @@
 rootProject.name = 'llm-apps-java-langchain4j'
 
+include '01-chat-models:chat-models-ollama'
 include '01-chat-models:chat-models-openai'
 
 include '02-prompts:prompts-basics-openai'
