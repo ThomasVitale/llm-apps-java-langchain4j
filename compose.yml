@@ -1,0 +1,7 @@
+services:
+  ollama:
+    image: 'ghcr.io/thomasvitale/ollama-llama2'
+    ports:
+      - '11434'
+    labels:
+      org.springframework.boot.service-connection: ollama
