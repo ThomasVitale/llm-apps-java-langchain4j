@@ -38,10 +38,10 @@ Samples showing how to build Java applications powered by Generative AI and LLMs
 
 ### 4. Embedding Models
 
-| Project                                                                                                                                  | Description                                              |
-|------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
-| [embedding-models-ollama](https://github.com/ThomasVitale/llm-apps-java-spring-ai/tree/main/04-embedding-models/embedding-models-ollama) | Vector transformation (embeddings) with LLMs via Ollama. |
-| [embedding-models-openai](https://github.com/ThomasVitale/llm-apps-java-spring-ai/tree/main/04-embedding-models/embedding-models-openai) | Vector transformation (embeddings) with LLMs via OpenAI. |
+| Project                                                                                                                                    | Description                                              |
+|--------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| [embedding-models-ollama](https://github.com/ThomasVitale/llm-apps-java-langchain4j/tree/main/04-embedding-models/embedding-models-ollama) | Vector transformation (embeddings) with LLMs via Ollama. |
+| [embedding-models-openai](https://github.com/ThomasVitale/llm-apps-java-langchain4j/tree/main/04-embedding-models/embedding-models-openai)   | Vector transformation (embeddings) with LLMs via OpenAI. |
 
 ### 5. Document Readers
 
