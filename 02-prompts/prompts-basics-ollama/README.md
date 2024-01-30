@@ -6,7 +6,7 @@ Prompting using simple text with LLMs via Ollama.
 
 The application relies on Ollama for providing LLMs. You can run the native Ollama app locally on your laptop (macOS or Linux), or rely on the Docker Compose/Testcontainers support in Spring Boot to spin up an Ollama service automatically at startup time.
 
-### Ollama as a native application
+### When using Ollama as a native application
 
 First, make sure you have [Ollama](https://ollama.ai) installed on your laptop (macOS or Linux).
 Then, use Ollama to run the _llama2_ large language model.
@@ -21,7 +21,7 @@ Finally, run the Spring Boot application.
 ./gradlew bootRun
 ```
 
-### Ollama as a dev service with Docker Compose
+### When using Ollama as a dev service with Docker Compose
 
 The application can optionally rely on the native Docker Compose support in Spring Boot to spin up an Ollama service with a _llama2_ model at startup time.
 To enable that, uncomment this dependency in the `build.gradle` file.
@@ -36,7 +36,7 @@ Then, run the Spring Boot application.
 ./gradlew bootRun
 ```
 
-### Ollama as a dev service with Testcontainers
+### When using Ollama as a dev service with Testcontainers
 
 The application relies on the native Testcontainers support in Spring Boot to spin up an Ollama service with a _llama2_ model at startup time.
 

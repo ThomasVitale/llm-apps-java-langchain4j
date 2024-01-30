@@ -1,0 +1,61 @@
+# Embedding Models: OpenAI
+
+Vector transformation (embeddings) with LLMs via OpenAI.
+
+## Description
+
+LangChain4j provides an `EmbeddingModel` abstraction for integrating with LLMs via several providers, including OpenAI.
+
+When using the _LangChain4j OpenAI Spring Boot Starter_, an `EmbeddingModel` object is autoconfigured for you to use OpenAI.
+By default, the _text-embedding-ada-002_ model is used.
+
+```java
+@RestController
+class EmbeddingController {
+    private final EmbeddingModel embeddingModel;
+
+    EmbeddingController(EmbeddingModel embeddingModel) {
+        this.embeddingModel = embeddingModel;
+    }
+
+    @GetMapping("/ai/embed")
+    String embed(@RequestParam(defaultValue = "And Gandalf yelled: 'You shall not pass!'") String message) {
+        var embeddings = embeddingModel.embed(message);
+        return "Size of the embedding vector: " + embeddings.content().vectorAsList().size();
+    }
+}
+```
+
+## Running the application
+
+The application relies on an OpenAI API for providing LLMs.
+
+### When using OpenAI
+
+First, make sure you have an OpenAI account.
+Then, define an environment variable with the OpenAI API Key associated to your OpenAI account as the value.
+
+```shell
+export LANGCHAIN4J_OPENAI_API_KEY=<INSERT KEY HERE>
+```
+
+Finally, run the Spring Boot application.
+
+```shell
+./gradlew bootRun
+```
+
+## Calling the application
+
+You can now call the application that will use OpenAI and _text-embedding-ada-002_ to generate a vector representation (embeddings) of a default text.
+This example uses [httpie](https://httpie.io) to send HTTP requests.
+
+```shell
+http :8080/ai/embed
+```
+
+Try passing your custom prompt and check the result.
+
+```shell
+http :8080/ai/embed message=="The capital of Italy is Rome"
+```

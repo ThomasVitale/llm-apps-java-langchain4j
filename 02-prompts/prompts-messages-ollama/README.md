@@ -1,29 +1,6 @@
-# Chat Models: Ollama
+# Prompts Messages: Ollama
 
-Text generation with LLMs via Ollama.
-
-## Description
-
-LangChain4j provides a `ChatLanguageModel` abstraction for integrating with LLMs via several providers, including Ollama.
-
-When using the _LangChain4j Ollama Spring Boot Starter_, a `ChatLanguageModel` object is autoconfigured for you to use Ollama.
-By default, the _llama2_ model is used.
-
-```java
-@RestController
-class ChatController {
-    private final ChatLanguageModel chatLanguageModel;
-
-    ChatController(ChatLanguageModel chatLanguageModel) {
-        this.chatLanguageModel = chatLanguageModel;
-    }
-
-    @GetMapping("/ai/chat")
-    String chat(@RequestParam(defaultValue = "What did Gandalf say to the Balrog?") String message) {
-        return chatLanguageModel.generate(message);
-    }
-}
-```
+Prompting using structured messages and roles with LLMs via Ollama.
 
 ## Running the application
 
@@ -69,15 +46,17 @@ The application relies on the native Testcontainers support in Spring Boot to sp
 
 ## Calling the application
 
-You can now call the application that will use Ollama and llama2 to generate text based on a default prompt.
+You can now call the application that will use Ollama and llama2 to generate an answer to your questions.
 This example uses [httpie](https://httpie.io) to send HTTP requests.
 
 ```shell
-http :8080/ai/chat
+http --raw "What is the capital of Italy?" :8080/ai/chat/single
 ```
 
-Try passing your custom prompt and check the result.
+```shell
+http --raw "What is the capital of Italy?" :8080/ai/chat/multiple
+```
 
 ```shell
-http :8080/ai/chat message=="What is the capital of Italy?"
+http --raw "What is the capital of Italy?" :8080/ai/chat/external
 ```

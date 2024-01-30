@@ -11,8 +11,11 @@ include '02-prompts:prompts-basics-ollama'
 include '02-prompts:prompts-basics-openai'
 include '02-prompts:prompts-messages-ollama'
 include '02-prompts:prompts-messages-openai'
+include '02-prompts:prompts-templates-ollama'
 include '02-prompts:prompts-templates-openai'
 
+include '03-output-parsers:output-parsers-bean-ollama'
 include '03-output-parsers:output-parsers-bean-openai'
 
+include '04-embedding-models:embedding-models-ollama'
 include '04-embedding-models:embedding-models-openai'

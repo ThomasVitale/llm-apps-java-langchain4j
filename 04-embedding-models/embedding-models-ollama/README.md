@@ -1,26 +1,27 @@
-# Chat Models: Ollama
+# Embedding Models: OpenAI
 
-Text generation with LLMs via Ollama.
+Vector transformation (embeddings) with LLMs via Ollama.
 
 ## Description
 
-LangChain4j provides a `ChatLanguageModel` abstraction for integrating with LLMs via several providers, including Ollama.
+LangChain4j provides an `EmbeddingModel` abstraction for integrating with LLMs via several providers, including OpenAI.
 
-When using the _LangChain4j Ollama Spring Boot Starter_, a `ChatLanguageModel` object is autoconfigured for you to use Ollama.
+When using the _LangChain4j Ollama Spring Boot Starter_, an `EmbeddingModel` object is autoconfigured for you to use OpenAI.
 By default, the _llama2_ model is used.
 
 ```java
 @RestController
-class ChatController {
-    private final ChatLanguageModel chatLanguageModel;
+class EmbeddingController {
+    private final EmbeddingModel embeddingModel;
 
-    ChatController(ChatLanguageModel chatLanguageModel) {
-        this.chatLanguageModel = chatLanguageModel;
+    EmbeddingController(EmbeddingModel embeddingModel) {
+        this.embeddingModel = embeddingModel;
     }
 
-    @GetMapping("/ai/chat")
-    String chat(@RequestParam(defaultValue = "What did Gandalf say to the Balrog?") String message) {
-        return chatLanguageModel.generate(message);
+    @GetMapping("/ai/embed")
+    String embed(@RequestParam(defaultValue = "And Gandalf yelled: 'You shall not pass!'") String message) {
+        var embeddings = embeddingModel.embed(message);
+        return "Size of the embedding vector: " + embeddings.content().vectorAsList().size();
     }
 }
 ```
@@ -69,15 +70,15 @@ The application relies on the native Testcontainers support in Spring Boot to sp
 
 ## Calling the application
 
-You can now call the application that will use Ollama and llama2 to generate text based on a default prompt.
+You can now call the application that will use Ollama and _llama2_ to generate a vector representation (embeddings) of a default text.
 This example uses [httpie](https://httpie.io) to send HTTP requests.
 
 ```shell
-http :8080/ai/chat
+http :8080/ai/embed
 ```
 
 Try passing your custom prompt and check the result.
 
 ```shell
-http :8080/ai/chat message=="What is the capital of Italy?"
+http :8080/ai/embed message=="The capital of Italy is Rome"
 ```

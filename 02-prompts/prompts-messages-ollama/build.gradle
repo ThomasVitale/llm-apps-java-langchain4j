@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+group = 'com.thomasvitale'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation "io.thomasvitale.langchain4j:langchain4j-ollama-spring-boot-starter:${springLangchain4jVersion}"
+    //developmentOnly "io.thomasvitale.langchain4j:langchain4j-spring-boot-docker-compose:${springLangchain4jVersion}"
+
+    testAndDevelopmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "io.thomasvitale.langchain4j:langchain4j-spring-boot-testcontainers:${springLangchain4jVersion}"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
