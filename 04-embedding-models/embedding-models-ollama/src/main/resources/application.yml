@@ -5,5 +5,7 @@ spring:
 
 langchain4j:
   ollama:
-    chat:
+    embedding:
       model: llama2
+    client:
+      log-requests: true
