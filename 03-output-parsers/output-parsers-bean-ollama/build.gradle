@@ -15,13 +15,13 @@ java {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation "io.thomasvitale.langchain4j:langchain4j-ollama-spring-boot-starter:${springLangchain4jVersion}"
-    implementation "dev.langchain4j:langchain4j:${langchain4jVersion}"
     //developmentOnly "io.thomasvitale.langchain4j:langchain4j-spring-boot-docker-compose:${springLangchain4jVersion}"
 
     testAndDevelopmentOnly 'org.springframework.boot:spring-boot-devtools'

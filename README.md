@@ -1,10 +1,11 @@
-# LLM Applications with Java, Spring Boot, and LangChain4J
+# LLM Applications with Java, Spring Boot, and LangChain4j
 
-Samples showing how to build Java applications powered by Generative AI and LLMs using Spring Boot and LangChain4J.
+Samples showing how to build Java applications powered by Generative AI and LLMs
+using the [LangChain4j Spring Boot](https://github.com/ThomasVitale/langchain4j-spring-boot) extension.
 
 ## Pre-Requisites
 
-* Java 21
+* Java 17+
 * Docker/Podman
 * [OpenAI](http://platform.openai.com) API Key (optional)
 * [Ollama](https://ollama.ai) (optional)
@@ -56,6 +57,14 @@ _Coming soon_
 _Coming soon_
 
 ### 8. Vector Stores
+
+_Coming soon_
+
+### 9. Tools
+
+_Coming soon_
+
+### 10. Image Models
 
 _Coming soon_
 

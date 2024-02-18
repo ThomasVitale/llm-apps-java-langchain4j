@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 class ChatController {
@@ -34,11 +35,11 @@ class ChatController {
                         "type", chatResponse.content().type()
                 ),
                 "tokenUsage", Map.of(
-                        "inputTokenCount", 0, // Ollama doesn't populate this field
+                        "inputTokenCount", Objects.requireNonNullElse(chatResponse.tokenUsage().inputTokenCount(), 0), // Ollama might not populate this field
                         "outputTokenCount", chatResponse.tokenUsage().outputTokenCount(),
                         "totalTokenCount", chatResponse.tokenUsage().totalTokenCount()
                 ),
-                "finishReason", "unknown" // Ollama doesn't populate this field
+                "finishReason", Objects.requireNonNullElse(chatResponse.finishReason(), "unknown") // Ollama might not populate this field
         );
     }
 
