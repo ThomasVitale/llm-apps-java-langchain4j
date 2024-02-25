@@ -5,7 +5,9 @@ spring:
 
 langchain4j:
   open-ai:
-    api-key: ${OPENAI_API_KEY}
+    client:
+      api-key: ${OPENAI_API_KEY}
     chat:
-      model: gpt-3.5-turbo
-      temperature: 0.7
+      options:
+        model: gpt-3.5-turbo
+        temperature: 0.7
