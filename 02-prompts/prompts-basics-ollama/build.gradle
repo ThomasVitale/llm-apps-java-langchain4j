@@ -28,6 +28,7 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "io.thomasvitale.langchain4j:langchain4j-spring-boot-testcontainers:${springLangchain4jVersion}"
+    testImplementation 'org.testcontainers:ollama'
 }
 
 tasks.named('test') {
