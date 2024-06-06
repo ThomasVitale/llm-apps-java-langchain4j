@@ -6,6 +6,6 @@ spring:
 langchain4j:
   ollama:
     embedding:
-      model: llama2
+      model: mistral
     client:
       log-requests: true

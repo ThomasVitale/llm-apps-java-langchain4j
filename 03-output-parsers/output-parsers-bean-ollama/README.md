@@ -9,10 +9,10 @@ The application relies on Ollama for providing LLMs. You can run the native Olla
 ### When using Ollama as a native application
 
 First, make sure you have [Ollama](https://ollama.ai) installed on your laptop (macOS or Linux).
-Then, use Ollama to run the _llama2_ large language model.
+Then, use Ollama to run the _mistral_ large language model.
 
 ```shell
-ollama run llama2
+ollama run mistral
 ```
 
 Finally, run the Spring Boot application.
@@ -23,7 +23,7 @@ Finally, run the Spring Boot application.
 
 ### When using Ollama as a dev service with Docker Compose
 
-The application can optionally rely on the native Docker Compose support in Spring Boot to spin up an Ollama service with a _llama2_ model at startup time.
+The application can optionally rely on the native Docker Compose support in Spring Boot to spin up an Ollama service with a _mistral_ model at startup time.
 To enable that, uncomment this dependency in the `build.gradle` file.
 
 ```groovy
@@ -38,7 +38,7 @@ Then, run the Spring Boot application.
 
 ### When using Ollama as a dev service with Testcontainers
 
-The application relies on the native Testcontainers support in Spring Boot to spin up an Ollama service with a _llama2_ model at startup time.
+The application relies on the native Testcontainers support in Spring Boot to spin up an Ollama service with a _mistral_ model at startup time.
 
 ```shell
 ./gradlew bootTestRun
@@ -46,7 +46,7 @@ The application relies on the native Testcontainers support in Spring Boot to sp
 
 ## Calling the application
 
-You can now call the application that will use Ollama and llama2 to generate an answer to your questions.
+You can now call the application that will use Ollama and mistral to generate an answer to your questions.
 This example uses [httpie](https://httpie.io) to send HTTP requests.
 
 ```shell

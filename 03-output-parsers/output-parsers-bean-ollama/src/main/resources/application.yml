@@ -6,7 +6,7 @@ spring:
 langchain4j:
   ollama:
     chat:
-      model: llama2
+      model: mistral
       options:
         temperature: 0.7
     client:
